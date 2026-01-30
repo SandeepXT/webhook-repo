@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Webhook Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 GitHub Activity Monitor</h1>
+            <p class="subtitle">Real-time tracking of repository events</p>
+        </header>
+
+        <div class="status-bar">
+            <span id="status" class="status-indicator">●</span>
+            <span id="status-text">Connecting...</span>
+            <span id="last-update"></span>
+        </div>
+
+        <main>
+            <div id="events-container">
+                <div class="loading">Loading events...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Polling every 15 seconds • Built with Flask & MongoDB</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
